@@ -10,6 +10,10 @@ sudo iptables -t nat -F && sudo iptables -t nat -X
 sudo iptables -t raw -F && sudo iptables -t raw -X
 sudo iptables -t mangle -F && sudo iptables -t mangle -X
 
+# delete cni interface flannel
+ip link delete cni0
+ip link delete flannel.1
+
 # Be sure to delete any file with name starting as "kube" before running the below command or run it from an empty directory
 sudo apt-get purge kubeadm kubectl kubelet kubernetes-cni kube*
 sudo apt-get remove docker docker-engine docker.io containerd runc
