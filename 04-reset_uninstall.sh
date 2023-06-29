@@ -4,6 +4,7 @@ sudo kubeadm reset -f
 
 sudo rm -rf /etc/cni /etc/kubernetes /var/lib/dockershim /var/lib/etcd /var/lib/kubelet /var/run/kubernetes ~/.kube/*
 
+systemctl restart containerd
 
 sudo iptables -F && sudo iptables -X
 sudo iptables -t nat -F && sudo iptables -t nat -X
